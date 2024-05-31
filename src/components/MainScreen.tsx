@@ -45,7 +45,9 @@ const MainScreen: React.FC = () => {
   )
 
   function renderHours(hours: ForecastHour[]) {
-    return hours.map(hour => <HourWeather weatherInfo={hour} />)
+    return hours.map(hour => (
+      <HourWeather key={hour.time_epoch} weatherInfo={hour} />
+    ))
   }
 
   function onFetchButtonPress() {
